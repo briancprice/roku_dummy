@@ -16,6 +16,8 @@ if __name__ == "__main__":
 
     DEFAULT_HOST_IP = os.environ['HOST_IP']
     DEFAULT_LISTEN_PORTS = os.environ['HOST_PORT']
+    DEFAULT_ADVERTISE_PORT = os.environ['ADVERTISE_PORT']
+    DEFAULT_ADVERTISE_IP = os.environ['ADVERTISE_IP']
     MQTT_HOST = os.environ['MQTT_HOST']
     MQTT_PORT = os.environ['MQTT_PORT']
     MQTT_USERNAME = os.getenv('MQTT_USERNAME',None)
@@ -52,8 +54,8 @@ if __name__ == "__main__":
             handler=handler,
             host_ip=DEFAULT_HOST_IP,
             listen_port=DEFAULT_LISTEN_PORTS,
-            advertise_ip=DEFAULT_HOST_IP,
-            advertise_port=DEFAULT_LISTEN_PORTS,
+            advertise_ip=DEFAULT_ADVERTISE_IP,
+            advertise_port=DEFAULT_ADVERTISE_PORT,
             bind_multicast=DEFAULT_UPNP_BIND_MULTICAST)  # !Change Host IP!
 
         discovery_transport, _ = yield from discovery_endpoint
